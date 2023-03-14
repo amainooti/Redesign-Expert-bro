@@ -1,0 +1,31 @@
+// ================================= Creating media query ========================================
+
+$breakpoints-up: (
+    "medium": 43.75rem,
+    "large": 56.25rem,
+    "xlarge":90rem
+);
+
+@mixin breakpoint($size){
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
+
+
+
+$breakpoints-down: (
+    "small": 43.745rem,
+    "medium": 56.24875rem,
+    "large":89.9987rem
+);
+
+
+
+@mixin breakpoint($size){
+    @media (max-width: map-get($breakpoints-down, $size)){
+        @content;
+    }
+}
+
+
