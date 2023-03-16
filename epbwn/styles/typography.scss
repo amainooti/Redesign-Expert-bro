@@ -1,0 +1,64 @@
+
+$small:650px;
+
+@mixin HeadText{
+font-family:Poppins , sans-serif;
+font-size:3rem;    
+letter-spacing: 3px;
+
+line-height: 3.2rem;
+color:white;
+@media screen and (max-width:$small) {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    text-align: center;
+}
+}
+
+@mixin pText{
+    font-family: Poppins , sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    color:#aaa;
+
+    @media screen and (max-width:$small){
+        font-size:1rem;
+text-align: center;
+    }
+}
+
+
+
+@mixin flex {
+    display:flex;
+
+}
+
+@mixin button{
+    padding:.8rem 1rem;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    font-size: 1.1rem;
+    font-family: Poppins, sans-serif;
+    background: rgb(161, 17, 233);
+    color:white;
+    border-radius:5px;
+    transition: all .4 ease-in;
+    margin-top: 1rem;
+
+    &:hover{
+        background: rgb(85, 38, 108);
+    }
+
+    @media screen and (max-width:$small) {
+        margin:auto;
+    }
+}
+
+@mixin  sectionPadding {
+    padding:3rem 3rem;
+    @media screen and (max-width:$small) {
+        padding:1rem 1rem;
+    }
+}
