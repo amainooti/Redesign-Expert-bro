@@ -249,3 +249,59 @@ margin-bottom: .8rem;
             }
         }
     }
+
+
+    //vision and mission
+
+    .app__vm{
+        @include typography.sectionPadding;
+        width: 100%;
+        display:flex;
+justify-content: space-between;
+margin: auto;
+padding: 1rem 3rem;
+        .vision{
+        flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+           
+            padding: 1rem;
+        h1{
+            @include typography.HeadText;
+            color:purple;
+            margin-bottom: 1.3rem;
+            // font-size: 1.4rem;
+        }
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem;
+            width: 100%;
+
+            li{
+                @include typography.pText;
+                padding: .6rem 1rem;
+                color: black;
+                font-size: .9rem;
+                font-weight: 500;
+
+                &::marker{
+                    color:purple;
+                    
+                }
+
+                @media screen and (max-width:650px) {
+                    text-align: left;
+                }
+            }
+         }
+        
+        }
+
+        @media screen and (max-width:650px) {
+          flex-direction: column;  
+        }
+    }
