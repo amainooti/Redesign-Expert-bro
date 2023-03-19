@@ -255,11 +255,11 @@ margin-bottom: .8rem;
 
     .app__vm{
         @include typography.sectionPadding;
-        width: 100%;
+        width: 95%;
         display:flex;
 justify-content: space-between;
 margin: auto;
-padding: 1rem 3rem;
+
         .vision{
         flex: 1;
             display: flex;
@@ -271,7 +271,7 @@ padding: 1rem 3rem;
             @include typography.HeadText;
             color:purple;
             margin-bottom: 1.3rem;
-            // font-size: 1.4rem;
+            font-size: 2.4rem;
         }
 
         ul{
