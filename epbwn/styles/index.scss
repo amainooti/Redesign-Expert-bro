@@ -1,307 +1,583 @@
-@use 'typography.scss';
+@use "typography.scss";
 
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration:none;
 }
 
-body{
-    width:100vw;
-    overflow-x:hidden;
+body {
+  width: 100vw;
+  overflow-x: hidden;
 }
 
-.page__container{
-    width:100%;
+.page__container {
+  width: 100%;
 }
 
-
-
-.hero__bg{
-    width:100%;
-    height:100vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.661) ,rgba(22, 22, 22, 0.67)) , url(../assets/background.png);
-   background-position: center;
-   background-size: cover;
+.hero__bg {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.661),
+      rgba(22, 22, 22, 0.67)
+    ),
+    url(../assets/background.png);
+  background-position: center;
+  background-size: cover;
 }
 
-.hero__text{
-    @include typography.flex;
-    @include typography.sectionPadding;
-    width:100%;
-    height:100%;
-    align-items: center;
-    justify-content: flex-start;
+.hero__text {
+  @include typography.flex;
+  @include typography.sectionPadding;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.hero__text div{
-    @include typography.flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap:10px;
-    padding:1rem 1rem;
+.hero__text div {
+  @include typography.flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 1rem 1rem;
 
- h1{
+  h1 {
     @include typography.HeadText;
+  }
 
-}
-
-h3{
-    font-family:Poppins;
-    color:#aaa;
+  h3 {
+    font-family: Poppins;
+    color: #aaa;
     font-size: 1.1rem;
     letter-spacing: 2px;
     text-transform: capitalize;
     font-weight: bold;
-    @media screen and (max-width:650px) {
-        text-align: center;
+    @media screen and (max-width: 650px) {
+      text-align: center;
     }
-}
+  }
 
-p{
+  p {
     @include typography.pText;
-}
+    @media screen and (max-width: 650px) {
+        text-align: center;
+      }
+  }
 
-button{
+  button {
     @include typography.button;
+  }
 }
 
+
+.app__about {
+  @include typography.sectionPadding;
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .about__headtext {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      @include typography.HeadText;
+      color: purple !important;
+    }
+  }
+
+  .about__images {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+
+    img {
+      margin-inline: 0.4rem;
+      width: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 0.8rem;
+      @media screen and (max-width: 650px) {
+        width: 150px;
+      }
+    }
+  }
+
+  .about__content {
+    width: 100%;
+    padding: 1rem 2rem;
+    margin-top: 1.4rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    p {
+      font-size: 1.1rem;
+      font-family: Poppins;
+      text-align: left;
+      line-height: 1.8rem;
+      color: rgb(66, 63, 63);
+      margin-top: 1.4rem;
+
+      @media screen and (max-width: 650px) {
+        p {
+          &:nth-child(2) {
+            text-align: right;
+            align-self: flex-end;
+          }
+        }
+      }
+    }
+  }
 }
 
+.app__objectives {
+  @include typography.sectionPadding;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
 
-.app__about{
-    @include typography.sectionPadding;
-    margin-top: 3rem;
-    width:100%;
+  .objectives__image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 80%;
+      padding: 1rem;
+    }
+  }
+
+  .objectives__headText {
+    @include typography.HeadText;
+    color: purple;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    font-family: Poppins;
+
+    @media screen and (max-width: 650px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  .objectives__content {
+    padding: 1rem;
+    margin-top: 1rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+
+      li {
+        @include typography.pText;
+        padding: 0.6rem 1rem;
+        color: black;
+        font-size: 1rem;
+        font-weight: 500;
+
+        &::marker {
+          color: purple;
+        }
+
+        @media screen and (max-width: 650px) {
+          text-align: left;
+        }
+      }
+    }
+  }
+  .objectives__cta {
+    width: 80%;
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    button {
+      @include typography.button;
+      background-color: rgb(49, 10, 140);
+      padding-inline: 3rem;
+
+      @media screen and (max-width: 650px) {
+        align-self: flex-start;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// got out linebreak
+
+.linebreak {
+  @include typography.sectionPadding;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1.5rem;
+  .linebreak__img {
+    width: 80%;
+    padding: 1rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .linebreak__text {
+    width: 80%;
+    padding: 1rem;
+    margin-top: 1.3rem;
+
+    p {
+      @include typography.pText;
+      color: black;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+}
+
+//vision and mission
+
+.app__vm {
+  @include typography.sectionPadding;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+
+  .vision {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    
-    .about__headtext{
-        width: 100%;
+    align-items: flex-start;
+
+    padding: 1rem;
+    h1 {
+      @include typography.HeadText;
+      color: purple;
+      margin-bottom: 1.3rem;
+      font-size: 2.4rem;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      width: 100%;
+
+      li {
+        @include typography.pText;
+        padding: 0.6rem 1rem;
+        color: black;
+        font-size: 0.9rem;
+        font-weight: 500;
+
+        &::marker {
+          color: purple;
+        }
+
+        @media screen and (max-width: 650px) {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+  }
+}
+
+.valuesbg {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  background: url(../assets/valuesimage.png);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .valuesbg__content {
+    width: 70%;
+    height: 80%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+
+    h3 {
+      @include typography.HeadText;
+    }
+
+    .lists {
+      display: flex;
+      width: 80%;
+      justify-content: space-between;
+      margin-top: 4rem;
+      ul {
+        flex: 1;
         padding: 1rem;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        h1{
-            @include typography.HeadText;
-            color:purple !important;
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin-right: 1rem;
+        li {
+          @include typography.pText;
+          font-size: 1.3rem;
+          margin-block: 1rem;
+
+          &::marker {
+            color: red;
+          }
+        }
+      }
+      @media screen and(max-width:650px) {
+        flex-direction: column;
+      }
+    }
+    button {
+      @include typography.button;
+      background: linear-gradient(
+        270.16deg,
+        rgba(116, 2, 135, 0.85) 7.13%,
+        rgba(2, 8, 135, 0.6) 99.95%
+      );
+      padding-inline: 2.4rem;
+
+      @media screen and(max-width:650px) {
+        margin: 2rem 0;
+      }
+    }
+  }
+}
+
+.app__services {
+  @include typography.sectionPadding;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .services__headText {
+    @include typography.HeadText;
+    color: purple;
+  }
+
+  .services__images {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    .imgCard {
+      width: 300px;
+      height: 250px;
+      flex-shrink: 0;
+      margin: 1rem 2rem;
+      box-shadow: 0px 0px 5px gray;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      background-color: whitesmoke;
+      gap: 10px;
+      padding: .3rem .3rem;
+      cursor: pointer;
+      transition: transform ease-in 0.4s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+     
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.1rem;
+        color: purple;
+        font-weight: bold;
+        font-family: Poppins;
+        letter-spacing: 1px;
+        padding: 1rem;
+        text-align: center;
+      }
+      @media screen and (max-width:650px){
+        width:250px;
+        height:250px;
+      }
+    }
+  }
+}
+
+
+.app__patners{
+    @include typography.sectionPadding;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top: 2rem;
+
+    .patners__headText{
+        @include typography.HeadText;
+        color:purple;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    p{
+        @include typography.pText;
+        padding:1rem 2rem;
+        color:black;
+        text-align: center;
+        text-transform: capitalize;
+        font-style: italic;
+
+        @media screen and (max-width:650px){
+            text-align:center;
         }
     }
 
-    .about__images{
-        width: 100%;
-        display: flex;
+    .patners__images{
+        display:flex;
+        justify-content: center;
         flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 1rem;
+        margin-top: 3rem;
+        gap:10px;
 
         img{
-            margin-inline:.4rem;
-            width: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-margin-bottom: .8rem;
-            @media screen and (max-width:650px){
-                width: 150px;
-            }
+            width:100px;
+        flex-shrink:0;
+        margin-inline: 1rem;
         }
     }
-
-    .about__content{
-        width: 100%;
-        padding: 1rem 2rem;
-        margin-top: 1.4rem;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        p{
-           font-size:1.1rem;
-           font-family: Poppins;
-           text-align: left;
-           line-height: 1.8rem;
-           color:rgb(66, 63, 63);
-           margin-top: 1.4rem;
-
-          @media screen and (max-width:650px) {
-            p{
-                &:nth-child(2){
-                    text-align: right;
-                    align-self: flex-end;
-                }
-            }
-          }
-           }
-        }
-        
-    }
-
-
-    .app__objectives{
-        @include typography.sectionPadding;
-        width: 100%;
-        display:flex;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 1rem;
-
-        .objectives__image{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            img{
-                width:80%;
-                padding: 1rem;
-            }
-        }
-
-        .objectives__headText{
-            @include typography.HeadText;
-            color:purple;
-            margin-top: 2rem;
-            font-size: 1.4rem;
-            font-family: Poppins;
-
-            @media screen and (max-width:650px){
-                font-size: 1.1rem;
-            }
-        }
-
-        .objectives__content{
-            padding: 1rem;
-             margin-top: 1rem;
-
-             ul{
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 1rem;
-
-                li{
-                    @include typography.pText;
-                    padding: .6rem 1rem;
-                    color: black;
-                    font-size: 1rem;
-                    font-weight: 500;
-
-                    &::marker{
-                        color:purple;
-                        
-                    }
-
-                    @media screen and (max-width:650px) {
-                        text-align: left;
-                    }
-                }
-             }
-        }
-       .objectives__cta{
-        width: 80%;
-        display: flex;
-        padding: 1rem;
-        flex-direction: column;
-        align-items: center;
-        button{
-            @include typography.button;
-        background-color: rgb(49, 10, 140);
-       padding-inline: 3rem;
-
-@media screen and (max-width:650px) {
-    align-self: flex-start;
-    margin: 0;
 }
-        } 
+
+
+.profiles{
+    @include typography.sectionPadding;
+
+    .swiper{
+        background:purple;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    @include typography.sectionPadding;
+    background: rgb(82, 2, 157);
+
+    .footer__header{
+       width:100%;
+       display:flex;
+       justify-content: center;
+       align-items: center;
+
+       h3{
+        @include typography.HeadText;
        }
     }
 
+    .links{
+        display: flex;
+       align-items: flex-start;
+        justify-content: space-between;
+        padding: 1rem;
+        gap: 10px;
+        margin-top: 1rem;
 
-
-    // got out linebreak
-
-    .linebreak{
-        @include typography.sectionPadding;
-  display: flex;
-            align-items: center;
-            flex-direction: column;
+        .links__list{
+            flex:1;
+            padding:1rem;
             width: 100%;
-            margin-top: 1.5rem;
-        .linebreak__img{
-            width:80%;
-            padding: 1rem;
-          
-            img{
-                width: 100%;
+         
+p{
+    @include typography.pText;
+    font-weight: bolder;
+color: white;
+font-size: 1.3rem;
+}
+            ul{
+                display: flex;
+                flex-direction:column;
+                gap: 10px;
+                align-items: flex-start;
+
+                li{
+                    @include typography.pText;
+                    list-style: none;
+                    margin-top: .7rem;
+                   a{
+                    color:white;
+            
+                    font-size:.9rem;
+                   }
+
+                }
             }
-        }
 
-        .linebreak__text{
-            width: 80%;
-            padding: 1rem;
-            margin-top: 1.3rem;
-
-            p{
-                @include typography.pText;
-                color:black;
-                text-align: center;
-                font-weight: bold;
-
-              
-            }
-        }
-    }
-
-
-    //vision and mission
-
-    .app__vm{
-        @include typography.sectionPadding;
-        width: 95%;
-        display:flex;
-justify-content: space-between;
-margin: auto;
-
-        .vision{
-        flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
            
-            padding: 1rem;
-        h1{
-            @include typography.HeadText;
-            color:purple;
-            margin-bottom: 1.3rem;
-            font-size: 2.4rem;
-        }
+        } .sponsor{
+                flex:1;
+                width: 100%;
+                display:flex;
+                flex-direction: column;
+               padding: 1rem;
 
-        ul{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 1rem;
-            width: 100%;
-
-            li{
-                @include typography.pText;
-                padding: .6rem 1rem;
-                color: black;
-                font-size: .9rem;
-                font-weight: 500;
-
-                &::marker{
-                    color:purple;
-                    
-                }
-
-                @media screen and (max-width:650px) {
-                    text-align: left;
+                h3{
+                    @include typography.pText;
+                    font-size: 1.3rem;
+                    color: white;
+                    font-weight: bolder;
                 }
             }
-         }
-        
-        }
-
-        @media screen and (max-width:650px) {
-          flex-direction: column;  
-        }
     }
+}
