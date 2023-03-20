@@ -424,7 +424,7 @@ body {
 .valuesbg {
   width: 100%;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   background: url(../assets/valuesimage.png);
   display: flex;
   align-items: center;
@@ -671,6 +671,25 @@ body {
 }
 .profiles .swiper {
   background: purple;
+  padding: 1rem;
+}
+
+.socials {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  flex: 1;
+}
+.socials div {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.lni {
+  font-size: 1.3rem;
+  color: white;
+  margin-block: 1rem;
 }
 
 .footer {
@@ -781,4 +800,7 @@ body {
     font-size: 1rem;
     text-align: left;
   }
+}
+.footer .links .sponsor .sponsor__img div img {
+  width: 150px;
 }/*# sourceMappingURL=index.css.map */

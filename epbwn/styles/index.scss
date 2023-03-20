@@ -304,7 +304,7 @@ body {
 .valuesbg {
   width: 100%;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   background: url(../assets/valuesimage.png);
 
   display: flex;
@@ -479,7 +479,7 @@ body {
 
     .swiper{
         background:purple;
-
+padding:1rem;
     }
 }
 
@@ -505,10 +505,25 @@ body {
 
 
 
+.socials{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    flex:1;
+     div{
+        display:flex;
+        justify-content: space-around;
+        width:100%;
+     }
+}
 
 
-
-
+.lni{
+    font-size:1.3rem;
+    color:white;
+    margin-block:1rem;
+    // margin-inline: 1rem;
+}
 
 
 .footer{
@@ -580,6 +595,14 @@ font-size: 1.3rem;
                     font-size: 1.3rem;
                     color: white;
                     font-weight: bolder;
+                }
+
+                .sponsor__img{
+                    div{
+                        img{
+                            width:150px;
+                        }
+                    }
                 }
             }
     }
