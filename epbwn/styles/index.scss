@@ -529,7 +529,7 @@ padding:1rem;
 .footer{
     @include typography.sectionPadding;
     background: rgb(82, 2, 157);
-
+overflow-x:hidden;
     .footer__header{
        width:100%;
        display:flex;
@@ -600,10 +600,110 @@ font-size: 1.3rem;
                 .sponsor__img{
                     div{
                         img{
-                            width:150px;
+                            width:100px;
                         }
                     }
                 }
             }
     }
+}
+
+
+
+
+.gallery{
+  @include typography.sectionPadding;
+  margin-block:2rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  .gallery__header{
+   
+    padding:1rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+      @include typography.HeadText;
+      color:purple;
+    }
+
+    p{
+      @include typography.pText;
+      color:black;
+      text-align: center;
+    }
+  }
+
+  .gallery__images{
+    margin-top: 2rem;
+    display: grid;
+    width:100%;
+    grid-template-columns: repeat(auto-fill,minmax(150px,400px));
+
+    .image img{
+      width:100%;
+    }
+  }
+
+
+}
+
+.profile{
+ background:linear-gradient(270.16deg, rgba(116, 2, 135, .276) 7.13%, rgba(2, 8, 135, .18) 99.95%);
+}
+
+
+
+
+.profiles{
+  @include typography.sectionPadding;
+ display:flex;
+
+
+ .profiles__content{
+  padding:1rem;
+  flex:1;
+
+  h3{
+    font-size: 1.3rem;
+    font-family: Poppins;
+    letter-spacing: 2px;
+
+  }
+
+p{
+@include typography.pText;
+font-size:1rem;
+color:black;
+margin-block: 1rem;
+}
+
+  .title{
+    @include typography.pText;
+    color:transparent;
+    background: linear-gradient(270.16deg, rgba(116, 2, 135, .85) 7.13%, rgba(2, 8, 135, .6) 99.95%);
+    background-clip: text;  
+    font-weight: bold;
+    
+  }
+ }
+
+ .profiles__img{
+  flex:1;
+
+  img{
+    width:100%;
+
+    @media screen and  (max-width:650px) {
+      width:250px;
+    }
+  }
+ }
+
+ @media screen and (max-width:740px) {
+  flex-direction: column-reverse;
+  gap: 20px;
+ }
 }

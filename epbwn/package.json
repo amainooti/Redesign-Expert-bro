@@ -12,6 +12,7 @@
     "vite": "^4.1.0"
   },
   "dependencies": {
+    "marquee-line": "^1.0.1",
     "sass": "^1.59.3"
   }
 }
