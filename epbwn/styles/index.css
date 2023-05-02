@@ -1,3 +1,7 @@
+:root {
+  --swiper-navigation-size: auto;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -864,8 +868,41 @@ body {
   width: 100%;
 }
 
-.profile {
-  background: linear-gradient(270.16deg, rgba(116, 2, 135, 0.276) 7.13%, rgba(2, 8, 135, 0.18) 99.95%);
+.swiper {
+  background: linear-gradient(270.16deg, rgba(116, 2, 135, 0.276) 7.13%, rgba(2, 8, 135, 0.18) 99.95%) !important;
+  position: relative;
+  width: 100% !important;
+  height: auto;
+}
+
+.swiper-slide-active {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-buttons {
+  position: absolute;
+  bottom: 20px;
+  /* background: red; */
+  width: 100%;
+  padding: 4px;
+  z-index: 100;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  position: static;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  background: blue;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bolder;
 }
 
 .profiles {
@@ -933,5 +970,79 @@ body {
   .profiles {
     flex-direction: column-reverse;
     gap: 20px;
+  }
+}
+
+.marquee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  padding-block: 1rem;
+}
+.marquee h1 {
+  font-family: Poppins, sans-serif;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 3.2rem;
+  color: white;
+  color: purple;
+}
+@media screen and (max-width: 650px) {
+  .marquee h1 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    text-align: center;
+  }
+}
+
+.marquee__car {
+  width: 100%;
+  height: 350px;
+  margin-top: 1rem;
+  padding: 1rem;
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  justify-content: space-around;
+}
+
+.marquee__card {
+  width: 350px;
+  height: 350px;
+  flex-shrink: 0;
+  transition: all ease 0.3s;
+}
+.marquee__card img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 650px) {
+  .marquee__card {
+    width: 250px;
+    height: 200px;
+  }
+}
+
+.animate {
+  animation: scroll linear 25s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(270%);
+  }
+  50% {
+    transform: translateX(540%);
+  }
+  75% {
+    transform: translateX(-540%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }/*# sourceMappingURL=index.css.map */
