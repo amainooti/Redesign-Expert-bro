@@ -658,6 +658,7 @@ font-size: 1.3rem;
  background:linear-gradient(270.16deg, rgba(116, 2, 135, .276) 7.13%, rgba(2, 8, 135, .18) 99.95%) !important;
 position: relative;
 width:100% !important;
+overflow-x:none;
 height:auto;
 }
 
@@ -674,13 +675,12 @@ height:auto;
 }
 
 .swiper-buttons{
-  position: absolute;
-  bottom: 20px;
-  /* background: red; */
+
+
   width: 100%;
   padding: 4px;
   z-index: 100;
-  height: auto;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -688,8 +688,19 @@ height:auto;
 
 }
 
+.swiper-button-next{
+  right:40%;
+  transform:translateX(-40%);
+}
+
+.swiper-button-prev{
+  left:30%;
+  transform:translateX(-30%);
+}
+
 .swiper-button-next , .swiper-button-prev{
-  position: static;
+ top:auto;
+bottom: 20px;
   width: 50px !important;
   height: 50px !important;
   border-radius: 50%;
@@ -709,7 +720,9 @@ height:auto;
  .profiles__content{
   padding:1rem;
   flex:1;
-
+  // background: #000;
+  height:100%;
+  overflow:auto;
   h3{
     font-size: 1.3rem;
     font-family: Poppins;
@@ -736,6 +749,9 @@ margin-block: 1rem;
 
  .profiles__img{
   flex:1;
+ @media screen and (max-width:740px) {
+ align-self:flex-start;
+ }
 
   img{
     width:100%;
@@ -749,9 +765,34 @@ margin-block: 1rem;
  @media screen and (max-width:740px) {
   flex-direction: column-reverse;
   gap: 20px;
+  
  }
+ 
 }
 
+
+._100{
+height:100vh !important;
+
+  @media screen and (max-width:650px) {
+    height:150vh !important;
+  }
+}
+
+._150{
+  height:150vh !important;
+  
+    @media screen and (max-width:650px) {
+      height:190vh !important;
+    }
+  }
+  ._180{
+    height:180vh !important;
+    
+      @media screen and (max-width:650px) {
+        height:260vh !important;
+      }
+    }
 
 .marquee{
   display:flex;
