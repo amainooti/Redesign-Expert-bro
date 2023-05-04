@@ -994,7 +994,7 @@ body {
 }
 @media screen and (max-width: 650px) {
   ._100 {
-    height: 150vh !important;
+    height: 160vh !important;
   }
 }
 
@@ -1003,7 +1003,7 @@ body {
 }
 @media screen and (max-width: 650px) {
   ._150 {
-    height: 190vh !important;
+    height: 200vh !important;
   }
 }
 
@@ -1012,7 +1012,7 @@ body {
 }
 @media screen and (max-width: 650px) {
   ._180 {
-    height: 260vh !important;
+    height: 280vh !important;
   }
 }
 
